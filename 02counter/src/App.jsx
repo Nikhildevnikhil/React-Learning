@@ -6,7 +6,14 @@ function App() {
   // let counter = 0;
   const addValue = () => {
     // counter += 1;
+    // Regardless of calling state setCounter it will increase only once 
+    // coz all the operations are send as batches in useState
     setCounter(counter+1);
+    setCounter(counter+1)
+    setCounter(counter+1)
+    // To increase count after calling two times setCounter state will increase cnter twice directly
+    // setCounter((prevCnt) => prevCnt + 1)
+    // setCounter(prevCnt => prevCnt + 1)
     console.log("clicked",counter);
   }
   const removeValue = () => {
@@ -24,5 +31,4 @@ function App() {
     </>
   )
 }
-
 export default App
